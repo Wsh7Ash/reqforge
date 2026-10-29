@@ -1,0 +1,31 @@
+$ reqforge send examples/order.http --host 127.0.0.1 --port 62214 --out results/captures
+http://127.0.0.1:62214  POST /v1/orders
+HTTP 201 Created  (15.4 ms)
+bytes: request=219 response=175
+Content-Type: application/json
+Location: /v1/orders/8812
+Content-Length: 53
+Connection: close
+
+{"order_id":8812,"owner":"user-a","status":"created"}
+
+$ reqforge replay examples/order.http --count 3
+attempts=3 statuses=[201] bodies=1 errors=0
+  {"attempt": 1, "body_bytes": 53, "body_sha": "7bc8daaac3b4bb7e", "elapsed_ms": 7.13, "status": 201}
+  {"attempt": 2, "body_bytes": 53, "body_sha": "7bc8daaac3b4bb7e", "elapsed_ms": 0.54, "status": 201}
+  {"attempt": 3, "body_bytes": 53, "body_sha": "7bc8daaac3b4bb7e", "elapsed_ms": 0.48, "status": 201}
+stable
+
+$ reqforge export examples/traversal.http --to curl --host api.example.test
+curl -i --path-as-is \
+  -H 'Host: api.example.test' \
+  -H 'Accept: */*' \
+  'http://api.example.test/v1/files/%2e%2e%2f%2e%2e%2fetc%2fpasswd'
+
+$ reqforge har results/captures/order.raw.http --out results/captures/order.har
+wrote 1 entries -> results/captures/order.har
+
+har entry: entries=1 status=201 bodySize=53 url=https://127.0.0.1:62214/v1/orders
+
+$ reqforge diff results/captures/order.json results/captures/order.json
+identical: no status, header or size change  (exit 0)

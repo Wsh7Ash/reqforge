@@ -1,0 +1,611 @@
+{
+  "name": "reqforge",
+  "version": "1.0.0",
+  "category": "networking",
+  "license": "MIT",
+  "runtime": "Claude Code, opencode, or any agent runtime that loads SKILL.md files",
+  "description": "50 validated skills for authoring, transmitting, capturing, replaying, comparing and exporting raw HTTP exchanges, plus a proxy-free request sender and HAR/curl exporter in one stdlib-only CLI.",
+  "skill_count": 50,
+  "skills": [
+    {
+      "slug": "request-file-from-proxy-pane",
+      "title": "Request File From Proxy Pane",
+      "path": "skills/request-file-from-proxy-pane/SKILL.md",
+      "tags": [
+        "authoring",
+        "capture",
+        "raw-http"
+      ],
+      "meta_phase": "author",
+      "sha256": "05edba6fa4d58fcdf455c08ef59b598faa7f745d2c1c511f0db40ad151697ec9"
+    },
+    {
+      "slug": "request-line-target-fidelity",
+      "title": "Request Line Target Fidelity",
+      "path": "skills/request-line-target-fidelity/SKILL.md",
+      "tags": [
+        "authoring",
+        "path-traversal",
+        "normalisation"
+      ],
+      "meta_phase": "author",
+      "sha256": "036b8fe833daeffb0f4ace68f96e99cfa0575f20c6c2b418198a9038cb4c1304"
+    },
+    {
+      "slug": "header-order-and-duplicate-testing",
+      "title": "Header Order and Duplicate Testing",
+      "path": "skills/header-order-and-duplicate-testing/SKILL.md",
+      "tags": [
+        "authoring",
+        "header-smuggling",
+        "parsing"
+      ],
+      "meta_phase": "author",
+      "sha256": "1023347ccca11c457a979d2e769a5d6d7bdc40fd09e7dc9cbef384ffcdacf8df"
+    },
+    {
+      "slug": "body-bytes-and-framing-declaration",
+      "title": "Body Bytes and Framing Declaration",
+      "path": "skills/body-bytes-and-framing-declaration/SKILL.md",
+      "tags": [
+        "authoring",
+        "framing",
+        "chunked"
+      ],
+      "meta_phase": "author",
+      "sha256": "4b1ec0fd164124adb6bb836835927a9682ed59d9bba9156665b77b9c47364452"
+    },
+    {
+      "slug": "content-type-declaration-mismatch",
+      "title": "Content Type Declaration Mismatch",
+      "path": "skills/content-type-declaration-mismatch/SKILL.md",
+      "tags": [
+        "authoring",
+        "content-type",
+        "parser"
+      ],
+      "meta_phase": "author",
+      "sha256": "3ba0a4d78bc001a84355ce62295b154148987f5caff5c26e5df9282b481acf82"
+    },
+    {
+      "slug": "authorization-header-variants",
+      "title": "Authorization Header Variants",
+      "path": "skills/authorization-header-variants/SKILL.md",
+      "tags": [
+        "authoring",
+        "authorization",
+        "matrix"
+      ],
+      "meta_phase": "author",
+      "sha256": "6ed11b022710a50298abdcc0fe17bf1af6db1678b3975d7d6c55d5e9eb369296"
+    },
+    {
+      "slug": "request-template-library",
+      "title": "Request Template Library",
+      "path": "skills/request-template-library/SKILL.md",
+      "tags": [
+        "authoring",
+        "reuse",
+        "workflow"
+      ],
+      "meta_phase": "author",
+      "sha256": "afa1f1b8ea5782c281a08ba411493d3b9501050bcc7068e5b2f8c866f091a89b"
+    },
+    {
+      "slug": "invalid-but-parseable-request-lines",
+      "title": "Invalid but Parseable Request Lines",
+      "path": "skills/invalid-but-parseable-request-lines/SKILL.md",
+      "tags": [
+        "authoring",
+        "parser-differential",
+        "routing"
+      ],
+      "meta_phase": "author",
+      "sha256": "3abbd5ec2977b5a6cc13a56197ac393b4524bc2d4e5ac8ea21ac150f15e7016a"
+    },
+    {
+      "slug": "hop-by-hop-header-authoring",
+      "title": "Hop by Hop Header Authoring",
+      "path": "skills/hop-by-hop-header-authoring/SKILL.md",
+      "tags": [
+        "authoring",
+        "proxy",
+        "connection"
+      ],
+      "meta_phase": "author",
+      "sha256": "7515ce08e3085804c1feaff9b18e856ffd3b8563cdacc7aac3357df081220785"
+    },
+    {
+      "slug": "single-shot-socket-send",
+      "title": "Single Shot Socket Send",
+      "path": "skills/single-shot-socket-send/SKILL.md",
+      "tags": [
+        "transmit",
+        "sockets",
+        "byte-fidelity"
+      ],
+      "meta_phase": "transmit",
+      "sha256": "bedfacbecfe783424e2d4f289af05a46748ac1865d600b386a26c8164d60919b"
+    },
+    {
+      "slug": "connect-timeout-discipline",
+      "title": "Connect Timeout Discipline",
+      "path": "skills/connect-timeout-discipline/SKILL.md",
+      "tags": [
+        "transmit",
+        "timeouts",
+        "reliability"
+      ],
+      "meta_phase": "transmit",
+      "sha256": "6568d9572dcb9c68cece1082539739e0bbf8446eba030cf31bf7aa0ea8701cd7"
+    },
+    {
+      "slug": "read-timeout-and-partial-response",
+      "title": "Read Timeout and Partial Response",
+      "path": "skills/read-timeout-and-partial-response/SKILL.md",
+      "tags": [
+        "transmit",
+        "timeouts",
+        "partial"
+      ],
+      "meta_phase": "transmit",
+      "sha256": "a3fca11d4d86e0a51a68d0fe2f4735705c7c7b8f0f829ff35c49ac60ab98bdc5"
+    },
+    {
+      "slug": "sni-and-host-header-divergence",
+      "title": "SNI and Host Header Divergence",
+      "path": "skills/sni-and-host-header-divergence/SKILL.md",
+      "tags": [
+        "transmit",
+        "tls",
+        "virtual-hosting"
+      ],
+      "meta_phase": "transmit",
+      "sha256": "f322f0e03d6d677542eef6de096d8ac68bee7e4ded5dc1900a90c94bb4d3cfa3"
+    },
+    {
+      "slug": "absolute-form-through-proxy",
+      "title": "Absolute Form Through Proxy",
+      "path": "skills/absolute-form-through-proxy/SKILL.md",
+      "tags": [
+        "transmit",
+        "proxy",
+        "request-target"
+      ],
+      "meta_phase": "transmit",
+      "sha256": "3acaf4d12b09c1ba0b757be4b7c66b2d7f722dc1053a28aff621e106f5c83561"
+    },
+    {
+      "slug": "ipv6-and-port-literal-hosts",
+      "title": "IPv6 and Port Literal Hosts",
+      "path": "skills/ipv6-and-port-literal-hosts/SKILL.md",
+      "tags": [
+        "transmit",
+        "addressing",
+        "bypass"
+      ],
+      "meta_phase": "transmit",
+      "sha256": "5d71bd53093db56d03ac5d3543be0f075f791c5d450437948b3e244b2e6d4d5d"
+    },
+    {
+      "slug": "head-first-then-body-read",
+      "title": "Head First Then Body Read",
+      "path": "skills/head-first-then-body-read/SKILL.md",
+      "tags": [
+        "transmit",
+        "framing",
+        "streaming"
+      ],
+      "meta_phase": "transmit",
+      "sha256": "ebf9cbd73be79e1fb6586afdba4e5e5ebdde4a11447e801bce92ebb0b6c38658"
+    },
+    {
+      "slug": "early-response-detection",
+      "title": "Early Response Detection",
+      "path": "skills/early-response-detection/SKILL.md",
+      "tags": [
+        "transmit",
+        "smuggling",
+        "parsing"
+      ],
+      "meta_phase": "transmit",
+      "sha256": "f0b24ad611d7057c71c86386962bb93265f7cdab5738b2af59c71d1f78341898"
+    },
+    {
+      "slug": "verbatim-response-capture",
+      "title": "Verbatim Response Capture",
+      "path": "skills/verbatim-response-capture/SKILL.md",
+      "tags": [
+        "capture",
+        "evidence",
+        "raw-http"
+      ],
+      "meta_phase": "capture",
+      "sha256": "e90aa9dfd97d1665e5faf98c95bc407f24ea31951eb57b79bff256083b11924d"
+    },
+    {
+      "slug": "response-framing-decode",
+      "title": "Response Framing Decode",
+      "path": "skills/response-framing-decode/SKILL.md",
+      "tags": [
+        "capture",
+        "chunked",
+        "framing"
+      ],
+      "meta_phase": "capture",
+      "sha256": "b35edfd967552b5d9df434af44198f6ae63bebec29a46f1001ea502f54fbdf81"
+    },
+    {
+      "slug": "binary-body-preservation",
+      "title": "Binary Body Preservation",
+      "path": "skills/binary-body-preservation/SKILL.md",
+      "tags": [
+        "capture",
+        "binary",
+        "encoding"
+      ],
+      "meta_phase": "capture",
+      "sha256": "835d266e3d7d6f7cb6e3f733cdb1bd7aaf43271999e5c0a7ac9d5fd8255e88eb"
+    },
+    {
+      "slug": "capture-naming-and-timestamps",
+      "title": "Capture Naming and Timestamps",
+      "path": "skills/capture-naming-and-timestamps/SKILL.md",
+      "tags": [
+        "capture",
+        "workflow",
+        "evidence"
+      ],
+      "meta_phase": "capture",
+      "sha256": "f2a9151df7d8adf8c9bad3200cd3760894f3cd8c912e79bd2f5a731f79f4c621"
+    },
+    {
+      "slug": "capture-metadata-minimum",
+      "title": "Capture Metadata Minimum",
+      "path": "skills/capture-metadata-minimum/SKILL.md",
+      "tags": [
+        "capture",
+        "metadata",
+        "evidence"
+      ],
+      "meta_phase": "capture",
+      "sha256": "e236992d71f5adc15970a062819ad0c947dc4041390abf9f68ea2565e9d69053"
+    },
+    {
+      "slug": "redirect-capture-without-following",
+      "title": "Redirect Capture Without Following",
+      "path": "skills/redirect-capture-without-following/SKILL.md",
+      "tags": [
+        "capture",
+        "redirects",
+        "auth"
+      ],
+      "meta_phase": "capture",
+      "sha256": "2dc850dc86b1dbe3eebeac832ea3190f31a3bcd5b5220f960366368ae5faa8d0"
+    },
+    {
+      "slug": "transport-failure-as-evidence",
+      "title": "Transport Failure as Evidence",
+      "path": "skills/transport-failure-as-evidence/SKILL.md",
+      "tags": [
+        "capture",
+        "errors",
+        "reliability"
+      ],
+      "meta_phase": "capture",
+      "sha256": "52db1c2bff70a11810bd5af4d36be5518c5f99a77ad87caf027d0f72f7c21a85"
+    },
+    {
+      "slug": "multi-exchange-session-capture",
+      "title": "Multi Exchange Session Capture",
+      "path": "skills/multi-exchange-session-capture/SKILL.md",
+      "tags": [
+        "capture",
+        "state",
+        "sequence"
+      ],
+      "meta_phase": "capture",
+      "sha256": "72837771e46071242dbd09ce4dc33c3a967204172d5abd39b4750a311fda05f9"
+    },
+    {
+      "slug": "idempotent-replay-determinism",
+      "title": "Idempotent Replay Determinism",
+      "path": "skills/idempotent-replay-determinism/SKILL.md",
+      "tags": [
+        "replay",
+        "determinism",
+        "verification"
+      ],
+      "meta_phase": "replay",
+      "sha256": "6f93d5bad8182e87efba387f4fe992f774ceeafea13fdf2fe6a2767c8a694498"
+    },
+    {
+      "slug": "replay-with-header-mutation",
+      "title": "Replay With Header Mutation",
+      "path": "skills/replay-with-header-mutation/SKILL.md",
+      "tags": [
+        "replay",
+        "mutation",
+        "differential"
+      ],
+      "meta_phase": "replay",
+      "sha256": "4335db7a73b2efb079198f56278bcafb8e38d08213795dabd30cffa906e31055"
+    },
+    {
+      "slug": "replay-rate-and-throttle",
+      "title": "Replay Rate and Throttle",
+      "path": "skills/replay-rate-and-throttle/SKILL.md",
+      "tags": [
+        "replay",
+        "rate-limit",
+        "pacing"
+      ],
+      "meta_phase": "replay",
+      "sha256": "a1a081e4003aac7b39d5d522a4b16a7089a0905f0b09d1a4abc625cd15074e8d"
+    },
+    {
+      "slug": "replay-across-accounts",
+      "title": "Replay Across Accounts",
+      "path": "skills/replay-across-accounts/SKILL.md",
+      "tags": [
+        "replay",
+        "authorization",
+        "accounts"
+      ],
+      "meta_phase": "replay",
+      "sha256": "954b78f79f88fa9bbae4babc244ca2b2fc2cd1306b82a1d5303bfbf732ecf395"
+    },
+    {
+      "slug": "replay-variance-report",
+      "title": "Replay Variance Report",
+      "path": "skills/replay-variance-report/SKILL.md",
+      "tags": [
+        "replay",
+        "statistics",
+        "evidence"
+      ],
+      "meta_phase": "replay",
+      "sha256": "3c0289a43193ca3eb21462c02d0bdd4504d0fe8e882f48b2fb75ecfe9e4727c6"
+    },
+    {
+      "slug": "replay-after-state-change",
+      "title": "Replay After State Change",
+      "path": "skills/replay-after-state-change/SKILL.md",
+      "tags": [
+        "replay",
+        "revocation",
+        "verification"
+      ],
+      "meta_phase": "replay",
+      "sha256": "820db0498e3b84f9cdf30ed81b83c33baf2d3d5b635c4b6eb6469d0236193810"
+    },
+    {
+      "slug": "replay-with-method-change",
+      "title": "Replay With Method Change",
+      "path": "skills/replay-with-method-change/SKILL.md",
+      "tags": [
+        "replay",
+        "methods",
+        "authorization"
+      ],
+      "meta_phase": "replay",
+      "sha256": "6d87f25e05d06e51dea34d70ce21dd7a1aa338d333639af2dd7a6e02eacb10bc"
+    },
+    {
+      "slug": "replay-preserving-body-bytes",
+      "title": "Replay Preserving Body Bytes",
+      "path": "skills/replay-preserving-body-bytes/SKILL.md",
+      "tags": [
+        "replay",
+        "integrity",
+        "bytes"
+      ],
+      "meta_phase": "replay",
+      "sha256": "35f83fb877b0a610bdc87f684d47ecddb8d9b6405fe4f597a0956f0e23c2898c"
+    },
+    {
+      "slug": "diff-status-and-length",
+      "title": "Diff Status and Length",
+      "path": "skills/diff-status-and-length/SKILL.md",
+      "tags": [
+        "compare",
+        "differential",
+        "triage"
+      ],
+      "meta_phase": "compare",
+      "sha256": "40fe0a10fc0d3f437ea3c40df9c91e02d6ecdb5d2c48c9d25cc8243833a1d45c"
+    },
+    {
+      "slug": "diff-header-set",
+      "title": "Diff Header Set",
+      "path": "skills/diff-header-set/SKILL.md",
+      "tags": [
+        "compare",
+        "headers",
+        "differential"
+      ],
+      "meta_phase": "compare",
+      "sha256": "79dfa9df8a69b97c0f564c2e6ec4bfa49e7ec0d5efab944b9c0b684ad77ce0c4"
+    },
+    {
+      "slug": "diff-body-normalised",
+      "title": "Diff Body Normalised",
+      "path": "skills/diff-body-normalised/SKILL.md",
+      "tags": [
+        "compare",
+        "body",
+        "normalisation"
+      ],
+      "meta_phase": "compare",
+      "sha256": "5e0b454f0958b223ef6fa1536e437c4b4160c64859032c1224e8ae25768ef38d"
+    },
+    {
+      "slug": "diff-across-hosts",
+      "title": "Diff Across Hosts",
+      "path": "skills/diff-across-hosts/SKILL.md",
+      "tags": [
+        "compare",
+        "environments",
+        "scope"
+      ],
+      "meta_phase": "compare",
+      "sha256": "34d6268d99d6fcc0b536f6ece1d38e8fa9eb9b9dc4c5a20a9105e6247f415d83"
+    },
+    {
+      "slug": "baseline-candidate-pairing",
+      "title": "Baseline Candidate Pairing",
+      "path": "skills/baseline-candidate-pairing/SKILL.md",
+      "tags": [
+        "compare",
+        "method",
+        "evidence"
+      ],
+      "meta_phase": "compare",
+      "sha256": "957ca8dfd3f3e76406da44f77db4999f7d2d65714608a76e7c3dbda1cadf634f"
+    },
+    {
+      "slug": "noise-versus-signal-triage",
+      "title": "Noise Versus Signal Triage",
+      "path": "skills/noise-versus-signal-triage/SKILL.md",
+      "tags": [
+        "compare",
+        "triage",
+        "analysis"
+      ],
+      "meta_phase": "compare",
+      "sha256": "aea96c25612e2f691c6e2b0416534f92b55cf1903771f2fc0dfeb85f66d13188"
+    },
+    {
+      "slug": "regression-gate-in-ci",
+      "title": "Regression Gate in Ci",
+      "path": "skills/regression-gate-in-ci/SKILL.md",
+      "tags": [
+        "compare",
+        "ci",
+        "regression"
+      ],
+      "meta_phase": "compare",
+      "sha256": "68163f546cdd2547281b03061964dca991ae35c3e1747ac0e5fc47fd1d82ef55"
+    },
+    {
+      "slug": "timing-delta-interpretation",
+      "title": "Timing Delta Interpretation",
+      "path": "skills/timing-delta-interpretation/SKILL.md",
+      "tags": [
+        "compare",
+        "timing",
+        "statistics"
+      ],
+      "meta_phase": "compare",
+      "sha256": "c92ec6f48c57a795a454ef38d10f37c936888bfb058bfde9e4cf61fa7f21dc27"
+    },
+    {
+      "slug": "har-entry-shape",
+      "title": "Har Entry Shape",
+      "path": "skills/har-entry-shape/SKILL.md",
+      "tags": [
+        "export",
+        "har",
+        "interoperability"
+      ],
+      "meta_phase": "export",
+      "sha256": "ef8c37230fd47ca6730e341070bbdceae58d0f5ff273102485a85f417f0cc76d"
+    },
+    {
+      "slug": "har-binary-base64",
+      "title": "Har Binary Base64",
+      "path": "skills/har-binary-base64/SKILL.md",
+      "tags": [
+        "export",
+        "har",
+        "binary"
+      ],
+      "meta_phase": "export",
+      "sha256": "7bc79fce498181190a971cf8e23ed34910ac41dbc942dcbd6b60adb97120d330"
+    },
+    {
+      "slug": "har-devtools-import",
+      "title": "Har Devtools Import",
+      "path": "skills/har-devtools-import/SKILL.md",
+      "tags": [
+        "export",
+        "har",
+        "verification"
+      ],
+      "meta_phase": "export",
+      "sha256": "a46fc0fc4e8df3092eac2eae0734b8e1bc0702adf291a0cb817e92442e28b4d9"
+    },
+    {
+      "slug": "curl-reproduction-command",
+      "title": "Curl Reproduction Command",
+      "path": "skills/curl-reproduction-command/SKILL.md",
+      "tags": [
+        "export",
+        "curl",
+        "reproduction"
+      ],
+      "meta_phase": "export",
+      "sha256": "bb636d4a15115daa876413b6d24d9c67bcf64870a8de1f08af7ca4bc5fccce0c"
+    },
+    {
+      "slug": "curl-safe-quoting",
+      "title": "Curl Safe Quoting",
+      "path": "skills/curl-safe-quoting/SKILL.md",
+      "tags": [
+        "export",
+        "shell",
+        "safety"
+      ],
+      "meta_phase": "export",
+      "sha256": "e6c66b6e6489714fe265c1a8e21d13aa9a4110b9054e27077cf850fd5a5387c3"
+    },
+    {
+      "slug": "jsonl-append-log",
+      "title": "Jsonl Append Log",
+      "path": "skills/jsonl-append-log/SKILL.md",
+      "tags": [
+        "export",
+        "jsonl",
+        "logging"
+      ],
+      "meta_phase": "export",
+      "sha256": "e4744bdac7b90f2bf8e543e243e646ab0070603961f7f20fa6a56152e0325fde"
+    },
+    {
+      "slug": "raw-transcript-for-report",
+      "title": "Raw Transcript for Report",
+      "path": "skills/raw-transcript-for-report/SKILL.md",
+      "tags": [
+        "export",
+        "report",
+        "evidence"
+      ],
+      "meta_phase": "export",
+      "sha256": "6e3daf1d470ac8ba7630aa781631a234cc00928302ce852521278b50e7214957"
+    },
+    {
+      "slug": "har-to-finding-evidence",
+      "title": "Har to Finding Evidence",
+      "path": "skills/har-to-finding-evidence/SKILL.md",
+      "tags": [
+        "export",
+        "report",
+        "findings"
+      ],
+      "meta_phase": "export",
+      "sha256": "46185e49c6c1a463d795ad64b68fda1f639388fe49b948a3e63603917eb19c0e"
+    },
+    {
+      "slug": "export-redaction-before-sharing",
+      "title": "Export Redaction Before Sharing",
+      "path": "skills/export-redaction-before-sharing/SKILL.md",
+      "tags": [
+        "export",
+        "redaction",
+        "safety"
+      ],
+      "meta_phase": "export",
+      "sha256": "49c316baa88750aae4faf92d18179d94258c081dd9c50ac6271dd6c66067c273"
+    }
+  ]
+}

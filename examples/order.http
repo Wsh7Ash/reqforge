@@ -1,0 +1,10 @@
+# placeholders: host
+# captured from the shop API while testing object-level authorization
+POST /v1/orders HTTP/1.1
+Host: api.example.test
+Content-Type: application/json
+Accept: application/json
+X-Request-Id: 5b1c0f7e-2d61-4f5a-9a3e-2f1a9c1d7e44
+Content-Length: 38
+
+{"sku":"A-1","quantity":1,"note":"x"}
